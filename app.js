@@ -20,12 +20,15 @@ searchUser.addEventListener("keyup", e => {
       console.log(data);
       if (data.profile.message === "Not Found") {
         // Show Alert
+        ui.showAlert("User Not Found", "alert alert-danger");
       } else {
         // Show Profile
         ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
       }
     });
   } else {
     // Clear Profile
+    ui.clearProfile();
   }
 });
